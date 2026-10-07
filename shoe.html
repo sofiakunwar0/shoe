@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shoe Cards</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+
+            display: flex;
+            justify-content: center;
+
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* 3 COLUMN GRID */
+        .product-container {
+            width: 100%;
+            max-width: 1100px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* CARD */
+        .product-card {
+            background-color: white;
+
+            border-radius: 18px;
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* IMAGE */
+        .image-box {
+            width: 100%;
+            height: 230px;
+
+            background-color: #f7f7f7;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+
+            transition: background-color 0.3s ease;
+        }
+
+        /* LIGHT GREEN IMAGE HOVER */
+        .product-card:hover .image-box {
+            background-color: lightgreen;
+        }
+
+        .image-box img {
+            width: 90%;
+            height: 90%;
+
+            object-fit: contain;
+
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.06);
+        }
+
+        /* PRODUCT INFORMATION */
+        .product-info {
+            padding: 22px;
+        }
+
+        .category {
+            font-size: 11px;
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            color: #888;
+
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 23px;
+            margin-bottom: 10px;
+
+            color: #222;
+        }
+
+        .description {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+
+            margin-bottom: 20px;
+        }
+
+        /* PRICE + BUTTON */
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+
+            color: #111;
+        }
+
+        button {
+            border: none;
+
+            background-color: #111;
+            color: white;
+
+            padding: 11px 16px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition:
+                background-color 0.3s ease,
+                transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #333;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-container">
+
+        <!-- CARD 1 -->
+        <div class="product-card">
+
+            <div class="image-box">
+                <img
+                    src="https://i.pinimg.com/originals/19/4e/ef/194eefcb3e53691e2616111c674aa58b.jpg"
+                    alt="Adidas Samba"
+                >
+            </div>
+
+            <div class="product-info">
+                <p class="category">lifestyles Shoes</p>
+
+                <h2>Adidas Samba</h2>
+
+                <p class="description">
+                    A timeless low-profile sneaker with a clean design, perfect for casual everyday outfits.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">$100</span>
+                    <button>View Product</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="product-card">
+
+            <div class="image-box">
+                <img
+                    src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/6c2f7028e26d40ed98a512420cb4db00_9366/IG8292_HM3_hover.jpg"
+                    alt="Running Shoes"
+                >
+            </div>
+
+            <div class="product-info">
+                <p class="category">Running Shoes</p>
+
+                <h2>Running Shoes</h2>
+
+                <p class="description">
+                    Lightweight running shoes with responsive cushioning for comfortable everyday runs.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">$180</span>
+                    <button>View Product</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="product-card">
+
+            <div class="image-box">
+                <img
+                    src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/73f2b1c3e16f423fa300baed88e28b87_9366/JI2060_01_standard.jpg"
+                    alt="Adidas Gazelle"
+                >
+            </div>
+
+            <div class="product-info">
+                <p class="category">CASUAL SHOES</p>
+
+                <h2>Adidas Gazelle </h2>
+
+                <p class="description">
+                     Classic suede sneakers with a simple retro style for everyday casual wear.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">$100</span>
+                    <button>View Product</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+        <div class="product-card">
+
+            <div class="image-box">
+                <img
+                    src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/15ffc221e7dc40ef831141ed19fd7194_9366/IE1802_HM3_hover.jpg"
+                    alt="Football Shoes"
+                >
+            </div>
+
+            <div class="product-info">
+                <p class="category">Football Shoes</p>
+
+                <h2>Adidas Predator</h2>
+
+                <p class="description">
+                    Performance football shoes designed for grip, control, and quick movement on the field.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">$160</span>
+                    <button>View Product</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- CARD 5 -->
+        <div class="product-card">
+
+            <div class="image-box">
+                <img
+                    src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/d7b0e6b8ddb64f4b90b0bc6ec82d6f4b_9366/IG7488_41_detail.jpg"
+                    alt="Daily Runner"
+                >
+            </div>
+
+            <div class="product-info">
+                <p class="category">Slides</p>
+
+                <h2>Adidas Adilettee</h2>
+
+                <p class="description">
+                    Comfortable slip-on slides designed for easy everyday wear and relaxation.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">$50</span>
+                    <button>View Product</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
